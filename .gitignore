@@ -1,1 +1,8 @@
+# CLion
+.idea
+
+# Rust
 /target
+
+# Editor files
+.*
