@@ -2,6 +2,9 @@
 name = "gemm-benchmark"
 version = "0.1.0"
 edition = "2018"
+description = "Simple BLAS [sd]gemm benchmark"
+license = "MIT OR Apache-2.0"
+homepage = "https://github.com/danieldk/gemm-benchmark"
 
 [dependencies]
 accelerate-src = { version = "0.3", optional = true }
