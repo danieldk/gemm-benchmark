@@ -15,14 +15,14 @@ implemented in Rust. It supports the following BLAS libraries:
 ### Build with Accelerate (macOS)
 
 ```
-$ cargo build --features accelerate --release
+$ cargo install gemm-benchmark --features accelerate
 ```
 ### Build with Intel MKL
 
 To build the benchmark with Intel MKL statically linked, use:
 
 ```
-$ cargo build --features intel-mkl --release
+$ cargo install gemm-benchmark --features intel-mkl
 ```
 
 Intel MKL uses Zen-specific `[sd]gemm`kernels on AMD Zen CPUs.
@@ -34,13 +34,13 @@ MKL binaries. To enable this override, use the `intel-mkl-amd`
 feature:
 
 ```
-$ cargo build --features intel-mkl-amd --release
+$ cargo install gemm-benchmark --features intel-mkl-amd
 ```
 
 ### Build with OpenBLAS
 
 ```shell
-$ cargo build --features openblas --release
+$ cargo install gemm-benchmark --features openblas
 ```
 
 Set `OPENBLAS_NUM_THREADS=1` before running.
