@@ -2,11 +2,11 @@
 use std::os::raw::c_int;
 use std::time::Duration;
 
-use clap::{AppSettings, Clap};
 use ndarray::linalg::general_mat_mul;
 use ndarray::{Array2, LinalgScalar};
 use rayon::iter::IntoParallelIterator;
 use rayon::iter::ParallelIterator;
+use structopt::StructOpt;
 
 #[cfg(feature = "accelerate")]
 extern crate accelerate_src;
@@ -17,23 +17,23 @@ extern crate intel_mkl_src;
 #[cfg(feature = "openblas")]
 extern crate openblas_src;
 
-#[derive(Clap)]
-#[clap(setting = AppSettings::ColoredHelp)]
+#[derive(StructOpt)]
+#[structopt(name = "basic")]
 struct Opts {
     /// Matrix dimensionality (N x N).
-    #[clap(short, long, default_value = "256")]
+    #[structopt(short, long, default_value = "256")]
     dim: usize,
 
     /// Double precision (DGEMM).
-    #[clap(long)]
+    #[structopt(long)]
     dgemm: bool,
 
     /// The number of gemm iterations per thread.
-    #[clap(short, long, default_value = "1000")]
+    #[structopt(short, long, default_value = "1000")]
     iterations: usize,
 
     /// The number of benchmark threads.
-    #[clap(short, long, default_value = "1")]
+    #[structopt(short, long, default_value = "1")]
     threads: usize,
 }
 
@@ -73,7 +73,7 @@ where
 }
 
 fn main() {
-    let opts: Opts = Opts::parse();
+    let opts: Opts = Opts::from_args();
 
     rayon::ThreadPoolBuilder::new()
         .num_threads(opts.threads)
