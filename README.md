@@ -17,6 +17,13 @@ implemented in Rust. It supports the following BLAS libraries:
 ```
 $ cargo install gemm-benchmark --features accelerate
 ```
+
+### Build with BLIS
+
+```
+$ cargo install gemm-benchmark --features blis
+```
+
 ### Build with Intel MKL
 
 To build the benchmark with Intel MKL statically linked, use:

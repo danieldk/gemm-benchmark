@@ -11,6 +11,9 @@ use structopt::StructOpt;
 #[cfg(feature = "accelerate")]
 extern crate accelerate_src;
 
+#[cfg(feature = "blis")]
+extern crate blis_src;
+
 #[cfg(any(feature = "intel-mkl", feature = "intel-mkl-amd"))]
 extern crate intel_mkl_src;
 

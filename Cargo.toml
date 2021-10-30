@@ -8,6 +8,7 @@ homepage = "https://github.com/danieldk/gemm-benchmark"
 
 [dependencies]
 accelerate-src = { version = "0.3", optional = true }
+blis-src = { version = "0.2", optional = true, default-features = false, features = ["serial", "cblas", "static"] }
 intel-mkl-src = { version = "0.6", optional = true, default-features = false }
 ndarray = { version = "0.15", features = ["blas"] }
 openblas-src = { version = "0.10", optional = true, default-features = false, features = [ "cblas", "static" ] }
@@ -16,6 +17,7 @@ structopt = { version = "0.3.17", features = ["color", "wrap_help"] }
 
 [features]
 accelerate = ["accelerate-src"]
+blis = ["blis-src"]
 intel-mkl = ["intel-mkl-src/mkl-static-lp64-seq"]
 intel-mkl-amd = ["intel-mkl-src/mkl-dynamic-lp64-seq"]
 openblas = ["openblas-src"]

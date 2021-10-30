@@ -47,6 +47,12 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "cf1de2fe8c75bc145a2f577add951f8134889b4795d47466a54a5c846d691693"
 
 [[package]]
+name = "blis-src"
+version = "0.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ef128d323604097bca670c127e1b6d33265b9affa52076a2f525ec9f07b94031"
+
+[[package]]
 name = "cblas-sys"
 version = "0.1.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -186,6 +192,7 @@ name = "gemm-benchmark"
 version = "0.1.0"
 dependencies = [
  "accelerate-src",
+ "blis-src",
  "intel-mkl-src",
  "ndarray",
  "openblas-src",
