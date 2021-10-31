@@ -83,9 +83,9 @@ fn main() {
         .build_global()
         .unwrap();
 
-    eprintln!("Threads: {}", opts.threads);
-    eprintln!("Iterations per thread: {}", opts.iterations);
-    eprintln!("Matrix shape: {} x {}", opts.dim, opts.dim);
+    println!("Threads: {}", opts.threads);
+    println!("Iterations per thread: {}", opts.iterations);
+    println!("Matrix shape: {} x {}", opts.dim, opts.dim);
 
     let stats = if opts.dgemm {
         gemm_benchmark::<f64>(opts.dim, opts.iterations, opts.threads)
@@ -93,7 +93,7 @@ fn main() {
         gemm_benchmark::<f32>(opts.dim, opts.iterations, opts.threads)
     };
 
-    eprintln!(
+    println!(
         "GFLOPS/s: {:.2}",
         (stats.flops as f64 / stats.elapsed.as_secs_f64()) / 1000_000_000.
     );
