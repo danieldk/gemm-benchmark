@@ -70,3 +70,19 @@ and *4* threads. It is also possible to benchmark `dgem,` using the
 ```shell
 $ gemm-benchmark -d 1024 -i 2000 -t 4 --dgemm
 ```
+
+## Example results
+
+### 1 to 16 threads
+
+The following table shows GFLOP/s for various CPUs using 1 to 16 threads on
+matrix size 768.
+
+| Threads | M1 Accelerate | M1 Pro Accelerate | Ryzen 3700X MKL | Ryzen 5900X MKL |
+| ------- | ------------- | ----------------- | --------------- | --------------- |
+| 1       | 1340          | 2061              | 134             | 148             |
+| 2       | 1226          | 2583              | 262             | 284             |
+| 4       | 1102          | 2685              | 513             | 558             |
+| 8       | 1253          | 2381              | 924             | 1106            |
+| 12      | 1225          | 2248              | 989             | 1555            |
+| 16      | 1217          | 2254              | 850             | 1390            |
