@@ -94,7 +94,7 @@ fn main() {
     };
 
     println!(
-        "GFLOPS/s: {:.2}",
+        "GFLOPS: {:.2}",
         (stats.flops as f64 / stats.elapsed.as_secs_f64()) / 1000_000_000.
     );
 }

@@ -75,7 +75,7 @@ $ gemm-benchmark -d 1024 -i 2000 -t 4 --dgemm
 
 ### 1 to 16 threads
 
-The following table shows GFLOP/s for various CPUs using 1 to 16 threads on
+The following table shows GFLOPS for various CPUs using 1 to 16 threads on
 matrix size 768.
 
 | Threads | M1 Accelerate | M1 Pro Accelerate | M1 Ultra Accelerate | Ryzen 3700X MKL | Ryzen 5900X MKL |
