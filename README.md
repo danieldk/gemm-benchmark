@@ -6,9 +6,9 @@ This is a small `[sd]gemm` benchmark based, similar to
 [ACES DGEMM](https://www.lanl.gov/projects/crossroads/benchmarks-performance-analysis.php),
 implemented in Rust. It supports the following BLAS libraries:
 
-* Accelerate (macOS)
-* Intel MKL
-* OpenBLAS
+- Accelerate (macOS)
+- Intel MKL
+- OpenBLAS
 
 ## Building
 
@@ -54,8 +54,8 @@ Set `OPENBLAS_NUM_THREADS=1` before running.
 
 ## Benchmarking
 
-By default, `sgemm` is benchmarked using *256 x 256* matrices, for
-*1,000* iterations and *1* thread. The dimensionality (`-d`), number
+By default, `sgemm` is benchmarked using _256 x 256_ matrices, for
+_1,000_ iterations and _1_ thread. The dimensionality (`-d`), number
 of iterations (`-i`), and the number of threads (`-t`) can be set
 with command-line flags. For example:
 
@@ -63,8 +63,8 @@ with command-line flags. For example:
 $ gemm-benchmark -d 1024 -i 2000 -t 4
 ```
 
-Runs the benchmark using *1024 x 1024* matrices, for *1,000* iterations,
-and *4* threads. It is also possible to benchmark `dgem,` using the
+Runs the benchmark using _1024 x 1024_ matrices, for _1,000_ iterations,
+and _4_ threads. It is also possible to benchmark `dgem,` using the
 `--dgemm` option:
 
 ```shell
@@ -73,13 +73,11 @@ $ gemm-benchmark -d 1024 -i 2000 -t 4 --dgemm
 
 ## Example results
 
-### 1 to 16 threads
-
 The following table shows GFLOPS for various CPUs using 1 to 16 threads on
-matrix size 768.
+matrix size 768, tested for 1000 iterations (`gemm-benchmark -d 768 -t NTHREADS`).
 
 | Threads | M1 Accelerate | M1 Pro Accelerate | M1 Ultra Accelerate | M2 Accelerate | i7-13700K |
-|---------|---------------|-------------------|---------------------|---------------|-----------|
+| ------- | ------------- | ----------------- | ------------------- | ------------- | --------- |
 | 1       | 1340          | 2061              | 2177                | 1475          | 165       |
 | 2       | 1226          | 2583              | 3427                | 1639          | 323       |
 | 4       | 1102          | 2685              | 3788                | 1730          | 646       |
